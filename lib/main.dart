@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realbdnews/pages/home.dart';
+import 'package:realbdnews/route_generator.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +13,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "RealBDNews",
-      home: Home(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
     );
   }

@@ -33,29 +33,250 @@ class _HomeState extends State<Home> {
         child: SafeArea(
             child: Column(
           children: <Widget>[
-            ListTile(
-              onTap: null,
-              title: Text('Page 1'),
-            ),
-            ListTile(
-              onTap: null,
-              title: Text('হোম'),
-            ),
-            ListTile(
-              onTap: null,
-              title: Text('বাংলাদেশ'),
-            ),
-            ListTile(
-              onTap: null,
-              title: Text('বিশ্ব'),
+            Expanded(
+              child: ListView(
+                children: <Widget>[
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Home',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Bangladesh',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Campus',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Economy',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Education',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Entertainment',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Features',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Health',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'International',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Jobs',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Lifestyle',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Opinion',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Others',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Politics',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Pressbox',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Religion',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Sports',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'Technology',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  ListTile(
+                    onTap: null,
+                    title: Text(
+                      'We are',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1,
+                  ),
+                ],
+              ),
             ),
           ],
         )),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(1000, 19, 32, 48),
         title: Text('RealBDNews'),
         centerTitle: true,
+        actions: <Widget>[
+          Icon(Icons.more_vert),
+        ],
       ),
       body: Column(
         children: <Widget>[
@@ -70,55 +291,78 @@ class _HomeState extends State<Home> {
                       itemCount: snapshot.data.length,
                       itemBuilder: (BuildContext context, int index) {
                         Map wpPost = snapshot.data[index];
-                        return Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: <Widget>[
-                                FutureBuilder(
-                                    future: fetchImg(wpPost['_links']
-                                        ['wp:featuredmedia'][0]['href']),
-                                    builder: (context, snapshot) {
-                                      if (snapshot.hasData) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              '/details',
+                              arguments: wpPost['_links']['self'][0]['href'],
+                            );
+                          },
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  FutureBuilder(
+                                      future: fetchImg(wpPost['_links']
+                                          ['wp:featuredmedia'][0]['href']),
+                                      builder: (context, snapshot) {
+                                        if (snapshot.hasData) {
+                                          return Container(
+                                            height: 100,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.25,
+                                            child: Image(
+                                                fit: BoxFit.cover,
+                                                image: NetworkImage(
+                                                    snapshot.data)),
+                                          );
+                                        }
                                         return Container(
                                           height: 100,
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
                                               0.25,
-                                          child: Image(
-                                              fit: BoxFit.cover,
-                                              image:
-                                                  NetworkImage(snapshot.data)),
+                                          child: Center(
+                                            child: CircularProgressIndicator(),
+                                          ),
                                         );
-                                      }
-                                      return Container(
-                                        height: 100,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.25,
-                                        child: Center(
-                                          child: CircularProgressIndicator(),
-                                        ),
-                                      );
-                                    }),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 6.0, horizontal: 8.0),
-                                  child: Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.64,
-                                    child: Text(
-                                      wpPost['title']['rendered'],
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
+                                      }),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 6.0, horizontal: 8.0),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width *
+                                          0.64,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Text(
+                                            wpPost['title']['rendered'],
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 14,
+                                          ),
+                                          Text(wpPost['date']
+                                              .toString()
+                                              .replaceFirst('T', ' | '))
+                                        ],
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         );
