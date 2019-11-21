@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realbdnews/details.dart';
+import 'package:realbdnews/pages/bangladesh.dart';
 import 'package:realbdnews/pages/home.dart';
 
 class RouteGenerator {
@@ -10,6 +11,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Home());
+      case '/bangladesh':
+        return MaterialPageRoute(builder: (_) => Bangladesh());
       case '/details':
         // Validation of correct data type
         if (args is String) {

@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:firebase_admob/firebase_admob.dart';
+
+MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
+  keywords: <String>['news', 'bd', 'bdnews'],
+);
+
+BannerAd myBanner = BannerAd(
+  // Replace the testAdUnitId with an ad unit id from the AdMob dash.
+  // https://developers.google.com/admob/android/test-ads
+  // https://developers.google.com/admob/ios/test-ads
+  adUnitId: "ca-app-pub-7956060327365422/6373796885",
+  size: AdSize.banner,
+  targetingInfo: targetingInfo,
+  listener: (MobileAdEvent event) {
+    print("BannerAd event is $event");
+  },
+);
 
 Future<List> fetchWpPosts(postamount) async {
   final response = await http.get(
@@ -27,6 +44,25 @@ class _HomeState extends State<Home> {
   int postAmount = 40;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    FirebaseAdMob.instance
+        .initialize(appId: "ca-app-pub-7956060327365422~4050885878");
+    myBanner
+      // typically this happens well before the ad is shown
+      ..load()
+      ..show(
+        // Positions the banner ad 60 pixels from the bottom of the screen
+        anchorOffset: 0.0,
+        // Positions the banner ad 10 pixels from the center of the screen to the right
+        horizontalCenterOffset: 10.0,
+        // Banner Position
+        anchorType: AnchorType.bottom,
+      );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
@@ -37,19 +73,9 @@ class _HomeState extends State<Home> {
               child: ListView(
                 children: <Widget>[
                   ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Home',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
+                    onTap: () {
+                      Navigator.pushNamed(context, '/bangladesh');
+                    },
                     title: Text(
                       'Bangladesh',
                       style: TextStyle(
@@ -272,7 +298,7 @@ class _HomeState extends State<Home> {
       ),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(1000, 19, 32, 48),
-        title: Text('RealBDNews'),
+        title: Text('ReaL BDNews'),
         centerTitle: true,
         actions: <Widget>[
           Icon(Icons.more_vert),
@@ -288,6 +314,8 @@ class _HomeState extends State<Home> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return ListView.builder(
+                      cacheExtent: 10,
+                      addAutomaticKeepAlives: true,
                       itemCount: snapshot.data.length,
                       itemBuilder: (BuildContext context, int index) {
                         Map wpPost = snapshot.data[index];
@@ -337,7 +365,7 @@ class _HomeState extends State<Home> {
                                         vertical: 6.0, horizontal: 8.0),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width *
-                                          0.64,
+                                          0.60,
                                       child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
