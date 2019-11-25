@@ -52,7 +52,7 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(1000, 19, 32, 48),
+        backgroundColor: Color.fromARGB(1000, 175, 166, 65),
         title: Text('Details'),
         centerTitle: true,
       ),
@@ -149,6 +149,9 @@ class Details extends StatelessWidget {
                     }
                     return Container();
                   },
+                ),
+                SizedBox(
+                  height: 70,
                 ),
               ],
             ),

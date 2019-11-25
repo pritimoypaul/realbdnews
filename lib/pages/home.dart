@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
   keywords: <String>['news', 'bd', 'bdnews'],
@@ -66,238 +67,259 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        child: SafeArea(
-            child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView(
-                children: <Widget>[
-                  ListTile(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/bangladesh');
-                    },
-                    title: Text(
-                      'Bangladesh',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+        child: Container(
+          color: Color.fromARGB(1000, 175, 166, 65),
+          child: SafeArea(
+              child: Column(
+            children: <Widget>[
+              Expanded(
+                child: ListView(
+                  children: <Widget>[
+                    ListTile(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/bangladesh');
+                      },
+                      title: Text(
+                        'Bangladesh',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Campus',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Campus',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Economy',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Economy',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Education',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Education',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Entertainment',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Entertainment',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Features',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Features',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Health',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Health',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'International',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'International',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Jobs',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Jobs',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Lifestyle',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Lifestyle',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Opinion',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Opinion',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Others',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Others',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Politics',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Politics',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Pressbox',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Pressbox',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Religion',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Religion',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Sports',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Sports',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'Technology',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'Technology',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                  ListTile(
-                    onTap: null,
-                    title: Text(
-                      'We are',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    Divider(
+                      thickness: 1,
+                    ),
+                    ListTile(
+                      onTap: null,
+                      title: Text(
+                        'We are',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1,
-                  ),
-                ],
+                    Divider(
+                      thickness: 1,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        )),
+            ],
+          )),
+        ),
       ),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(1000, 19, 32, 48),
+        backgroundColor: Color.fromARGB(1000, 175, 166, 65),
         title: Text('ReaL BDNews'),
         centerTitle: true,
         actions: <Widget>[
@@ -382,9 +404,8 @@ class _HomeState extends State<Home> {
                                           SizedBox(
                                             height: 14,
                                           ),
-                                          Text(wpPost['date']
-                                              .toString()
-                                              .replaceFirst('T', ' | '))
+                                          Text(timeago.format(
+                                              DateTime.parse(wpPost['date']))),
                                         ],
                                       ),
                                     ),

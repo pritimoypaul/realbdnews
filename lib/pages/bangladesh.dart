@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:timeago/timeago.dart' as timeago;
 
 Future<List> fetchWpPosts(postamount) async {
   final response = await http.get(
@@ -30,7 +31,7 @@ class _BangladeshState extends State<Bangladesh> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(1000, 19, 32, 48),
+        backgroundColor: Color.fromARGB(1000, 175, 166, 65),
         title: Text('Bangladesh'),
         centerTitle: true,
         actions: <Widget>[
@@ -115,9 +116,8 @@ class _BangladeshState extends State<Bangladesh> {
                                           SizedBox(
                                             height: 14,
                                           ),
-                                          Text(wpPost['date']
-                                              .toString()
-                                              .replaceFirst('T', ' | '))
+                                          Text(timeago.format(
+                                              DateTime.parse(wpPost['date'])))
                                         ],
                                       ),
                                     ),
