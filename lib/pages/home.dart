@@ -142,28 +142,96 @@ class _HomeState extends State<Home> {
                     Divider(
                       thickness: 1,
                     ),
-                    ListTile(
-                      onTap: null,
+                    ExpansionTile(
                       title: Text(
-                        'Features',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                        'Lifestyle',
+                        style: TextStyle(color: Colors.white),
                       ),
+                      children: <Widget>[
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Jobs',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                          thickness: 1,
+                        ),
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Health',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                          thickness: 1,
+                        ),
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Technology',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Divider(
                       thickness: 1,
                     ),
-                    ListTile(
-                      onTap: null,
+                    ExpansionTile(
                       title: Text(
-                        'Health',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                        'Others',
+                        style: TextStyle(color: Colors.white),
                       ),
+                      children: <Widget>[
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Opinion',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                          thickness: 1,
+                        ),
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Features',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                          thickness: 1,
+                        ),
+                        ListTile(
+                          onTap: null,
+                          title: Text(
+                            'Religion',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Divider(
                       thickness: 1,
@@ -172,58 +240,6 @@ class _HomeState extends State<Home> {
                       onTap: null,
                       title: Text(
                         'International',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
-                        'Jobs',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
-                        'Lifestyle',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
-                        'Opinion',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
-                        'Others',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -262,33 +278,7 @@ class _HomeState extends State<Home> {
                     ListTile(
                       onTap: null,
                       title: Text(
-                        'Religion',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
                         'Sports',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Divider(
-                      thickness: 1,
-                    ),
-                    ListTile(
-                      onTap: null,
-                      title: Text(
-                        'Technology',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -311,6 +301,9 @@ class _HomeState extends State<Home> {
                     Divider(
                       thickness: 1,
                     ),
+                    SizedBox(
+                      height: 80,
+                    )
                   ],
                 ),
               ),
@@ -404,8 +397,19 @@ class _HomeState extends State<Home> {
                                           SizedBox(
                                             height: 14,
                                           ),
-                                          Text(timeago.format(
-                                              DateTime.parse(wpPost['date']))),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: <Widget>[
+                                              Icon(Icons.access_time),
+                                              SizedBox(
+                                                width: 8.0,
+                                              ),
+                                              Text(timeago.format(
+                                                  DateTime.parse(
+                                                      wpPost['date']))),
+                                            ],
+                                          ),
                                         ],
                                       ),
                                     ),

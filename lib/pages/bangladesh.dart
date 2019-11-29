@@ -116,8 +116,19 @@ class _BangladeshState extends State<Bangladesh> {
                                           SizedBox(
                                             height: 14,
                                           ),
-                                          Text(timeago.format(
-                                              DateTime.parse(wpPost['date'])))
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: <Widget>[
+                                              Icon(Icons.access_time),
+                                              SizedBox(
+                                                width: 8.0,
+                                              ),
+                                              Text(timeago.format(
+                                                  DateTime.parse(
+                                                      wpPost['date']))),
+                                            ],
+                                          ),
                                         ],
                                       ),
                                     ),
